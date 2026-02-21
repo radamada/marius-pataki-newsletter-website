@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Video-uri Gratuite — Protocolul R.E.C. | Marius Pataki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --bg-warm: #f3efe8;
+    --bg-card: #ffffff;
+    --accent: #b8432f;
+    --accent-hover: #9a3626;
+    --accent-soft: rgba(184, 67, 47, 0.08);
+    --accent-border: rgba(184, 67, 47, 0.15);
+    --text-dark: #1a1815;
+    --text-body: #4a4640;
+    --text-muted: #8a8580;
+    --border: rgba(26, 24, 21, 0.08);
+    --shadow: 0 2px 20px rgba(26, 24, 21, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- Nav --- */
+  nav {
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .nav-name {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    font-weight: 400;
+  }
+
+  .nav-tag {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* --- Hero --- */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    min-height: 85vh;
+  }
+
+  .hero-content {
+    max-width: 500px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-body);
+    margin-bottom: 36px;
+  }
+
+  /* --- Form card --- */
+  .form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 48px 44px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent);
+  }
+
+  .form-card h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .form-card .form-sub {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .form-field {
+    margin-bottom: 16px;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-field input:focus {
+    border-color: var(--accent-border);
+  }
+
+  .form-field input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .form-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+  }
+
+  .form-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(184, 67, 47, 0.2);
+  }
+
+  .form-note {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  /* --- Divider --- */
+  .section-divider {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-divider hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* --- What you get --- */
+  .videos-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .videos-header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 56px;
+  }
+
+  .videos-header .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .videos-header h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .videos-header p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .video-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(26, 24, 21, 0.1);
+  }
+
+  .video-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .video-card h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .video-card p {
+    font-size: 0.88rem;
+    color: var(--text-body);
+    line-height: 1.7;
+  }
+
+  .video-card .tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 5px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+
+  /* --- Who section --- */
+  .who-section {
+    background: var(--bg-warm);
+    padding: 80px 40px;
+  }
+
+  .who-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .who-inner .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .who-inner h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.35;
+    margin-bottom: 32px;
+  }
+
+  .who-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .who-list li .check {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .who-list li .check svg {
+    width: 12px;
+    height: 12px;
+    stroke: var(--accent);
+    stroke-width: 3;
+    fill: none;
+  }
+
+  /* --- Final CTA --- */
+  .final-section {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .final-section h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .final-section p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .final-form {
+    display: flex;
+    gap: 12px;
+  }
+
+  .final-form input {
+    flex: 1;
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: 'Outfit', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .final-form input:focus {
+    border-color: var(--accent-border);
+  }
+
+  .final-form button {
+    padding: 14px 28px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .final-form button:hover {
+    background: var(--accent-hover);
+  }
+
+  /* --- Footer --- */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* --- Animations --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: 40px 24px 60px;
+      min-height: auto;
+    }
+    .hero-content { max-width: 100%; }
+    nav { padding: 20px 24px; }
+    .videos-section { padding: 60px 24px; }
+    .videos-grid { grid-template-columns: 1fr; gap: 20px; }
+    .who-section { padding: 60px 24px; }
+    .final-section { padding: 60px 24px; }
+    .final-form { flex-direction: column; }
+    .final-form button { width: 100%; }
+  }
+
+  @media (max-width: 480px) {
+    .form-card { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <span class="nav-name">Marius Pataki</span>
+  <span class="nav-tag">Reglare emoțională</span>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">3 video-uri gratuite</div>
+    <h1>Înțelege <em>mecanismul</em> care îți ține reacția activă.</h1>
+    <p class="hero-desc">
+      Primești 3 video-uri scurte în care îți explic exact ce este Protocolul R.E.C., de ce reacționezi automat și cum oprești ciclul — fără voință, fără luptă internă.
+    </p>
+    <ul class="who-list" style="margin-bottom:0;">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Video 1 — De ce reflexul pare iubire
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Video 2 — Combustibilul
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Video 3 — Standardul
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-card" id="formular">
+    <h2>Primește cele 3 video-uri gratuit</h2>
+    <p class="form-sub">Intră pe email imediat după înscriere.</p>
+    <form id="newsletter-form">
+      <div class="form-field">
+        <label for="email">Adresa de email</label>
+        <input type="email" id="email" placeholder="email@exemplu.com" required>
+      </div>
+      <button type="submit" class="form-btn">Trimite-mi video-urile →</button>
+    </form>
+    <p class="form-note">Zero spam. Te poți dezabona oricând.</p>
+  </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- ===================== CE PRIMEȘTI ===================== -->
+<section class="videos-section">
+  <div class="videos-header reveal">
+    <div class="eyebrow">Ce primești</div>
+    <h2>Trei video-uri care îți arată exact ce se întâmplă și ce poți face.</h2>
+    <p>Nu motivație. Nu citate. Mecanism explicat simplu, aplicabil imediat.</p>
+  </div>
+
+  <div class="videos-grid">
+    <div class="video-card reveal">
+      <div class="video-num">R</div>
+      <h3>Reglare — De ce reflexul pare iubire</h3>
+      <p>Primul pas din protocol. Înțelegi ce se activează și de ce.</p>
+    </div>
+
+    <div class="video-card reveal">
+      <div class="video-num">E</div>
+      <h3>Eliminare — Combustibilul</h3>
+      <p>Ce anume îți menține circuitul activ fără să-ți dai seama.</p>
+    </div>
+
+    <div class="video-card reveal">
+      <div class="video-num">C</div>
+      <h3>Corectare — Standardul</h3>
+      <p>Ce pui în loc ca să nu revii în același tipar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PENTRU CINE ===================== -->
+<section class="who-section">
+  <div class="who-inner reveal">
+    <div class="eyebrow">Pentru cine sunt</div>
+    <h2>Aceste video-uri sunt pentru tine dacă:</h2>
+
+    <ul class="who-list">
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Verifici telefonul compulsiv să vezi dacă ți-a răspuns
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Te ții ocupat(ă) ziua, dar seara reacția revine
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Analizezi fiecare conversație și te întrebi ce ai greșit
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Aștepți validare sau „închidere" ca să mergi mai departe
+      </li>
+      <li>
+        <span class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Simți că știi ce ar trebui să faci, dar nu reușești
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-section reveal" id="inscriere">
+  <h2>Primește cele 3 video-uri gratuit.</h2>
+  <p>Intră pe email imediat. Aplici din prima seară.</p>
+  <form class="final-form" id="newsletter-form-bottom">
+    <input type="email" placeholder="Adresa ta de email" required>
+    <button type="submit">Vreau acces →</button>
+  </form>
+  <p class="form-note" style="margin-top:12px;">Zero spam. Te poți dezabona oricând.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 Marius Pataki · Protocolul R.E.C. · Toate drepturile rezervate.
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form redirects
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'newsletter-thank-you.html';
+  });
+  document.getElementById('newsletter-form-bottom').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'newsletter-thank-you.html';
+  });
+</script>
+
+</body>
+</html>
